@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Sports Day Scores</title>
   <style>
+    *{
+      margin:20px;
+    }
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -17,7 +20,7 @@
       width: 150px;
       height: 100px;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       font-size: 24px;
       font-weight: bold;
@@ -35,6 +38,7 @@
     <div class="container">
     <div class="box blue" ><p id="blueScore"></div>
     <div class="box red" id="redScore"></div>
+      <br>
     <div class="box green" id="greenScore"></div>
     <div class="box yellow" id="yellowScore"></div>
   </div>
