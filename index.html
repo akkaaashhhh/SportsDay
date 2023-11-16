@@ -48,58 +48,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore-compat.js"></script>
 
-    <script>
-        const firebaseConfig = {
-          apiKey: "AIzaSyCoaxmFyr_wenLOmrrMVZKiIsn9rTPDpvA",
-          authDomain: "sports-day-12d5b.firebaseapp.com",
-          databaseURL: "https://sports-day-12d5b-default-rtdb.firebaseio.com",
-          projectId: "sports-day-12d5b",
-          storageBucket: "sports-day-12d5b.appspot.com",
-          messagingSenderId: "1045074421660",
-          appId: "1:1045074421660:web:a98a1ad9747592275c4a59",
-          measurementId: "G-N924RQX8RR"
-        };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        // Function to fetch and display scores
-        const displayScores = async () => {
-            try {
-                const docRef = db.collection("Scores").doc("HouseWiseScores");
-                const doc = await docRef.get();
-
-                if (doc.exists) {
-                    const data = doc.data();
-                    console.log(data);
-
-                    const scores = [
-                        { name: 'Blue', score: data.Blue },
-                        { name: 'Red', score: data.Red },
-                        { name: 'Green', score: data.Green },
-                        { name: 'Yellow', score: data.Yellow },
-                    ];
-
-                    // Sort scores in descending order
-                    scores.sort((a, b) => b.score - a.score);
-
-                    // Rearrange boxes based on sorted scores
-                    scores.forEach(({ name, score }, index) => {
-                        document.getElementById(`${name.toLowerCase()}Score`).innerText = `${name}: ${score}`;
-                        const box = document.querySelector(`.box.${name.toLowerCase()}`);
-                        document.querySelector('.container').insertBefore(box, document.querySelectorAll('.box')[index]);
-                    });
-                } else {
-                    console.log("No such document!");
-                }
-            } catch (error) {
-                console.error("Error getting document:", error);
-            }
-        };
-
-        // Call the function to display scores when the page loads
-        window.onload = displayScores;
+    <script src="index.js" type="module">
+        
     </script>
 </body>
 </html>
