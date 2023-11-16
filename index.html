@@ -4,20 +4,17 @@
   <meta charset="UTF-8">
   <title>Sports Day Scores</title>
   <style>
-    *{
-      margin:20px;
-    }
     .container {
-      display: flex;
-      flex-wrap: wrap;
+      display: block;
       justify-content: center;
       align-items: center;
       gap: 10px;
-      margin: 20px;
+      /* margin: auto; */
+
     }
 
     .box {
-      width: 150px;
+      width: 100%;
       height: 100px;
       display: flex;
       justify-content: space-evenly;
@@ -25,7 +22,14 @@
       font-size: 24px;
       font-weight: bold;
       border-radius: 8px;
+      margin-bottom: 10px;
     }
+    .TopTitle {
+      display: flex;
+      justify-content: center;
+      
+    }
+
 
     .blue { background-color: blue; color: white; }
     .red { background-color: red; color: white; }
@@ -34,11 +38,10 @@
   </style>
 </head>
 <body>
-    <h1>House Scores - Spark '23-'24</h1>
+    <h1 class="TopTitle">House Scores - Spark '23-'24</h1>
     <div class="container">
     <div class="box blue" ><p id="blueScore"></div>
     <div class="box red" id="redScore"></div>
-      <br>
     <div class="box green" id="greenScore"></div>
     <div class="box yellow" id="yellowScore"></div>
   </div>
